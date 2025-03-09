@@ -3,25 +3,85 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Colors */
+  --background: #1E1E1E;
+  --primary: #FFFFFF;
+  --secondary: #FF702C;
 }
 
 body {
-  color: var(--foreground);
+  color: var(--primary);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+
+  .link {
+    @apply text-secondary-80 hover:cursor-pointer transition duration-300 hover:text-secondary
   }
+
+  .btn-nav {
+    @apply p-2 text-secondary bg-secondary-10 rounded-lg transition hover:bg-secondary-20
+  }
+
+  .btn-hero {
+    @apply bg-transparent p-4 w-64 lg:w-80 uppercase font-semibold text-secondary italic border border-secondary transition duration-300 hover:bg-secondary-10
+  }
+
+  .header-hero {
+    @apply text-4xl lg:text-5xl tracking-tight uppercase mt-10 text-center
+  }
+
+  .header-section {
+    @apply font-bold text-3xl lg:text-4xl text-center tracking-tighter leading-tight
+  }
+
+  .description {
+    @apply text-center w-72 md:w-96
+  }
+
+  .bg-blur {
+    @apply bg-secondary rounded-full blur-2xl opacity-30 -z-50
+  }
+
+  .circle-img-sm {
+    @apply w-14 h-14
+  }
+
+  .about-card {
+    @apply px-5 py-10 border border-white/30 bg-[#D9D9D9]/5 rounded-xl w-52
+  }
+
+  .about-desc {
+    @apply w-auto text-center
+  }
+
+  .ticker-img {
+    @apply w-auto h-56 md:h-64 lg:h-72
+  }
+
+  .gallery-img {
+    @apply h-auto w-40 md:w-56 rounded-xl
+  }
+
+  .ingredient-adj {
+    @apply text-5xl uppercase text-secondary tracking-tight text-center
+  }
+
+  .ingredient-card {
+    @apply bg-primary p-4 flex flex-col items-center w-full rounded-xl
+  }
+
+  .ingredient-desc {
+    @apply text-xs text-[#3D3D3D] tracking-tight leading-tight
+  }
+
+  .arrow {
+    @apply hidden md:block absolute w-40 lg:w-56
+  }
+
+  .social-icon {
+    @apply w-10 h-10
+  }
+
 }
